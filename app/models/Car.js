@@ -29,7 +29,10 @@ export class Car {
             <img
               src="${this.imgUrl}"
               alt="${this.year} ${this.color} ${this.make} ${this.model}" class="card-img">
-            <h4>${this.year} ${this.color} ${this.make} ${this.model} <span><i style="color: ${this.color}" class="mdi mdi-circle"></i></span></h4>
+            <h4>${this.make} ${this.model}</h4>
+            <div>
+              <span>${this.year} <i style="color: ${this.color}" class="mdi mdi-circle"></i></span>
+            </div>
             <p class="text-end fw-bold text-success">$${this.price}</p>
           </div>
         </div>
