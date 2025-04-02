@@ -15,7 +15,7 @@
 <body data-bs-theme="light">
   <!-- SECTION -->
   <header>
-    <nav class="navbar bg-codeworks text-light gap-2 px-2">
+    <nav class="navbar bg-success text-light gap-2 px-2">
       <img src="./assets/img/logo.png" height="45" alt="" loading="lazy">
       <div><b>gregslist_2</b></div>
       <div class="ms-auto" id="authstate"></div>
@@ -27,11 +27,73 @@
     <section class="container-fluid">
       <div class="row d-flex flex-column">
         <div class="col-12">
-          <h2>Cars For Sale</h2>
+          <h2 class="text-success ms-2 mt-3 mb-3">Cars For Sale</h2>
         </div>
       </div>
     </section>
 
+    <!-- STUB create cars form  -->
+    <section class="container bg-white rounded shadow p-2 car-form">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-primary">List your car here!</h3>
+          <form onsubmit="app.CarsController.createCarListing()">
+            <div class="mb-3">
+              <label for="carMake">Car Make</label>
+              <input id="carMake" name="make" type="text" required minlength="3" maxlength="20"
+                placeholder="Car Make...">
+            </div>
+            <div class="mb-3">
+              <label for="carModel">Car Model</label>
+              <input id="carModel" name="model" type="text" required maxlength="50" placeholder="Car Model...">
+            </div>
+            <div class="mb-3">
+              <label for="carPrice">Car Price</label>
+              <input id="carPrice" name="price" type="number" required min="0" max="1000000" placeholder="0">
+            </div>
+            <div class="mb-3">
+              <label for="carYear">Car Year</label>
+              <input id="carYear" name="year" type="number" required min="1886" max="2025" placeholder="2025">
+            </div>
+            <div class="mb-3">
+              <label for="carMileage">Car Mileage</label>
+              <input id="carMileage" name="mileage" type="number" required min="1" max="3200000" placeholder="1">
+            </div>
+            <div class="mb-3">
+              <label for="carImgUrl">Car Image URL</label>
+              <input id="carImgUrl" name="imgUrl" type="url" required maxlength="1000" placeholder="Image URL...">
+            </div>
+            <div class="mb-3">
+              <label for="carEngineType">Car Engine Type</label>
+              <input id="carEngineType" name="engineType" type="text" required maxlength="50"
+                placeholder="Car Engine Type...">
+            </div>
+            <div class="mb-3">
+              <label for="carColor">Car Color</label>
+              <input id="carColor" name="color" type="color" value="#FF0000" class="check-input">
+            </div>
+            <div class="mb-3">
+              <label for="carHasCleanTitle" class="d-inline">Does this car have a clean title?</label>
+              <input id="carHasCleanTitle" name="hasCleanTitle" type="checkbox" class="check-input ms-2">
+            </div>
+            <div class="mb-3">
+              <label for="carIsManual" class="d-inline">Does this car have a manual transmission?</label>
+              <input id="carIsManual" name="isManualTransmission" type="checkbox" class="check-input ms-2">
+            </div>
+            <div class="text-end">
+              <button class="btn btn-outline-danger me-2" type="reset">
+                Reset Form
+              </button>
+              <button class="btn btn-outline-dark">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUB cars cards here -->
     <section class="container-fluid">
       <div id="listings" class="row g-2 my-2 d-flex">
         <!-- <div class="col-6 col-md-4">
