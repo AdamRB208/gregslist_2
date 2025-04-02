@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js"
 import { Car } from "../models/Car.js"
+import { Pop } from "../utils/Pop.js"
 
 
 class CarsService {
@@ -24,10 +25,20 @@ class CarsService {
     console.log('loaded cars', carsString);
     const carsData = JSON.parse(carsString)
     console.log('Cars Loaded', carsData);
+    if (carsData == null) return
     const cars = carsData.map(carData => new Car(carData))
     console.log('Cars!', cars);
     AppState.cars = cars
 
+  }
+
+  deleteCar(carId) {
+    const carToDelete = AppState.cars.find(car => car.id == carId)
+    const indexToRemove = AppState.cars.indexOf(carToDelete)
+    console.log('deleting car', carToDelete, indexToRemove);
+    AppState.cars.splice(indexToRemove, 1)
+    Pop.toast(`Deleted ${carToDelete.make} ${carToDelete.model}`)
+    this.saveCars()
   }
 
 }

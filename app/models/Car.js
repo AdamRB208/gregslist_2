@@ -1,3 +1,4 @@
+import { generateId } from "../utils/GenerateId.js"
 
 export class Car {
 
@@ -10,9 +11,12 @@ export class Car {
    * price: number,
    * imgUrl: string,
    * color: string,
+   * listingDate: *
    * }} data 
    */
   constructor(data) {
+    this.id = generateId()
+    this.listingDate = data.listingDate ? new Date(data.listingDate) : new Date()
     this.make = data.make
     this.model = data.model
     this.year = data.year
@@ -34,9 +38,19 @@ export class Car {
               <span>${this.year} <i style="color: ${this.color}" class="mdi mdi-circle"></i></span>
             </div>
             <p class="text-end fw-bold text-success">$${this.price}</p>
+            <small class="tet-secondary">${this.dateFormatted}</small>
+          </div>
+          <div class="text-end">
+            <button onclick="app.CarsController.deleteCar('${this.id}')" class="btn btn-outline-danger" type="button">
+              Delete Car
+            </button>
           </div>
         </div>
       </div>
     `
+  }
+
+  get dateFormatted() {
+    return this.listingDate.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })
   }
 }

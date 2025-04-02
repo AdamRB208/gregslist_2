@@ -36,6 +36,14 @@ export class CarsController {
     console.log('car data', carData);
     carsService.createCarListing(carData)
     form.reset()
-
   }
+
+  deleteCar(carId) {
+    const confirmed = confirm('Are you sure you want to delete this car? This cannont be undone.')
+
+    console.log('deleting car', carId);
+    if (confirmed == false) return
+    carsService.deleteCar(carId)
+  }
+
 }
