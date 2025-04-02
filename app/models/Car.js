@@ -2,18 +2,18 @@ import { generateId } from "../utils/GenerateId.js"
 
 export class Car {
 
-  /**
-   * 
-   * @param {{
-   * make: string,
-   * model: string,
-   * year: number,
-   * price: number,
-   * imgUrl: string,
-   * color: string,
-   * listingDate: *
-   * }} data 
-   */
+  // /**
+  //  * 
+  //  * @param {{
+  //  * make: string,
+  //  * model: string,
+  //  * year: number,
+  //  * price: number,
+  //  * imgUrl: string,
+  //  * color: string,
+  //  * listingDate: *
+  //  * }} data 
+  //  */
   constructor(data) {
     this.id = generateId()
     this.listingDate = data.listingDate ? new Date(data.listingDate) : new Date()
@@ -32,7 +32,7 @@ export class Car {
           <div class="card-body p-1">
             <img
               src="${this.imgUrl}"
-              alt="${this.year} ${this.color} ${this.make} ${this.model}" class="card-img">
+              alt="${this.year} ${this.color} ${this.make} ${this.model}" class="car-img rounded">
             <h4>${this.make} ${this.model}</h4>
             <div>
               <span>${this.year} <i style="color: ${this.color}" class="mdi mdi-circle"></i></span>

@@ -22,9 +22,14 @@ main {
 
 }
 
-.card-img {
-  height: 10em;
+.car-img {
+  height: 15em;
+  width: 27.5em;
   object-fit: cover;
 }
 
-.car-form {}
+.house-img {
+  height: 20em;
+  width: 27.5em;
+  object-fit: cover;
+}

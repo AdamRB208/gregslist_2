@@ -110,9 +110,72 @@
       </div>
     </section>
 
+    <!-- STUB houses section starts here -->
+    <section class="container-fluid">
+      <div class="row d-flex flex-column">
+        <div class="col-12">
+          <h2 class="text-success ms-2 mt-3 mb-3">Houses For Sale</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUB create house listing form  -->
+    <section class="container bg-white rounded shadow p-2 house-form">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-primary">List your house here!</h3>
+          <form onsubmit="app.HousesController.createHouseListing()">
+            <div class="mb-3">
+              <label for="homeYear">Year Constructed</label>
+              <input id="homeYear" name="year" type="number" required min="1800" max="2025"
+                placeholder="Year of construction...">
+            </div>
+            <div class="mb-3">
+              <label for="totalBedrooms">Bedrooms</label>
+              <input id="totalBedrooms" name="bedrooms" type="number" required required min="1" max="100"
+                placeholder="Number of Bedrooms...">
+            </div>
+            <div class="mb-3">
+              <label for="totalBathrooms">Bathrooms</label>
+              <input id="totalBathrooms" name="bathrooms" type="number" required required min="1" max="100"
+                placeholder="Number of Bathrooms...">
+            </div>
+            <div class="mb-3">
+              <label for="totalSqft">Total Square Footage</label>
+              <input id="totalSqft" name="sqft" type="number" required min="300" max="1000000"
+                placeholder="Total Sqft...">
+            </div>
+            <div class="mb-3">
+              <label for="listingPrice">Listing Price</label>
+              <input id="listingPrice" name="price" type="number" required min="1000" max="20000000"
+                placeholder="listingPrice...">
+            </div>
+            <div class="mb-3">
+              <label for="houseDescription">House Description</label>
+              <input id="houseDescription" name="description" type="text" required minlength="1" max="1500"
+                placeholder="Description...">
+            </div>
+            <div class="mb-3">
+              <label for="houseImgUrl">House Image URL</label>
+              <input id="houseImgUrl" name="imgUrl" type="url" required maxlength="1500" placeholder="Image URL...">
+            </div>
+            <div class="text-end">
+              <button class="btn btn-outline-danger me-2" type="reset">
+                Reset Form
+              </button>
+              <button class="btn btn-outline-dark">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
     <!-- STUB houses card starts here -->
     <section class="container-fluid">
-      <div id="houseCardTemplate" class="row g-2 my-2 d-flex">
+      <div id="houseListings" class="row g-2 my-2 d-flex">
         <div>Houses here</div>
   </main>
 
