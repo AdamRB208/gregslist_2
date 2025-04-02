@@ -23,7 +23,17 @@ export class Car {
 
   get CardTemplate() {
     return /*html*/ `
-    <div>${this.make} ${this.model}</div>
+    <div class="col-6 col-md-4">
+        <div class="card">
+          <div class="card-body p-1">
+            <img
+              src="${this.imgUrl}"
+              alt="${this.year} ${this.color} ${this.make} ${this.model}" class="card-img">
+            <h4>${this.year} ${this.color} ${this.make} ${this.model} <span><i style="color: ${this.color}" class="mdi mdi-circle"></i></span></h4>
+            <p class="text-end fw-bold text-success">$${this.price}</p>
+          </div>
+        </div>
+      </div>
     `
   }
 }

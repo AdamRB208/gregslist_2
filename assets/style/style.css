@@ -18,3 +18,8 @@ main {
   justify-content: start;
   align-items: end;
 }
+
+mdi-circle {
+  text-shadow: 0 0 4px black;
+
+}
