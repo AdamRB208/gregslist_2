@@ -20,6 +20,13 @@ class CarsService {
   }
 
   loadCars() {
+    const carsString = localStorage.getItem('gregslist_cars')
+    console.log('loaded cars', carsString);
+    const carsData = JSON.parse(carsString)
+    console.log('Cars Loaded', carsData);
+    const cars = carsData.map(carData => new Car(carData))
+    console.log('Cars!', cars);
+    AppState.cars = cars
 
   }
 

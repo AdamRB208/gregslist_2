@@ -9,6 +9,7 @@ export class CarsController {
     console.log('Cars Controller Running!')
     this.drawCars()
     AppState.on('cars', this.drawCars)
+    carsService.loadCars()
   }
 
 
