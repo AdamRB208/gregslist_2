@@ -38,7 +38,7 @@ export class Car {
               <span>${this.year} <i style="color: ${this.color}" class="mdi mdi-circle"></i></span>
             </div>
             <p class="text-end fw-bold text-success">$${this.price}</p>
-            <small class="tet-secondary">${this.dateFormatted}</small>
+            <small class="text-secondary">${this.dateFormatted}</small>
           </div>
           <div class="text-end">
             <button onclick="app.CarsController.deleteCar('${this.id}')" class="btn btn-outline-danger" type="button">

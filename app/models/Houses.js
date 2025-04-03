@@ -19,7 +19,7 @@ export class House {
 
   constructor(data) {
     this.id = generateId()
-    this.listingDate = new Date()
+    this.listingDate = data.listingDate ? new Date(data.listingDate) : new Date()
     this.year = data.year
     this.bedrooms = data.bedrooms
     this.bathrooms = data.bathrooms
@@ -45,7 +45,7 @@ export class House {
             </div>
             <p class="text-end fw-bold">Listing Price:</p>
             <p class="text-end fw-bold text-success">$${this.price}</p>
-            <!-- < small class="text-secondary" > ${this.dateFormatted}</small > -->
+            <small class="text-secondary" > ${this.dateFormatted}</small >
           </div >
       <div class="text-end">
         <button onclick="app.HousesController.deleteHouse('${this.id}')" class="btn btn-outline-danger" type="button">
@@ -56,5 +56,10 @@ export class House {
       </div >
       `
   }
+
+  get dateFormatted() {
+    return this.listingDate.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })
+  }
+
 }
 

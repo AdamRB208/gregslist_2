@@ -24,12 +24,12 @@ main {
 
 .car-img {
   height: 15em;
-  width: 27.5em;
+  width: 100%;
   object-fit: cover;
 }
 
 .house-img {
   height: 20em;
-  width: 27.5em;
+  width: 100%;
   object-fit: cover;
 }
