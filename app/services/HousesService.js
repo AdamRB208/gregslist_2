@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js"
 import { House } from "../models/Houses.js"
+import { Pop } from "../utils/Pop.js"
 
 
 
@@ -30,6 +31,14 @@ class HouseService {
 
   }
 
+  deleteHouse(houseId) {
+    const houseToDelete = AppState.houses.find(house => house.id == houseId)
+    const indexToRemove = AppState.houses.indexOf(houseToDelete)
+    console.log('deleting house', houseToDelete, indexToRemove);
+    AppState.houses.splice(indexToRemove, 1)
+    Pop.toast(`Deleted ${houseToDelete.year} ${houseToDelete.description}`)
+    this.saveHouse()
+  }
 
 }
 

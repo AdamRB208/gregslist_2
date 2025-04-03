@@ -48,7 +48,7 @@ export class House {
             <!-- < small class="text-secondary" > ${this.dateFormatted}</small > -->
           </div >
       <div class="text-end">
-        <button class="btn btn-outline-danger" type="button">
+        <button onclick="app.HousesController.deleteHouse('${this.id}')" class="btn btn-outline-danger" type="button">
           Delete House Listing
         </button>
       </div>

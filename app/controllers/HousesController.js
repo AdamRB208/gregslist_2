@@ -8,6 +8,7 @@ export class HousesController {
     console.log('Houses Controller Running!')
     this.drawHouses()
     AppState.on('houses', this.drawHouses)
+    houseService.loadHouses()
   }
 
   drawHouses() {
@@ -32,7 +33,12 @@ export class HousesController {
     form.reset()
   }
 
-
+  deleteHouse(houseId) {
+    const confirmed = confirm('Are you sure you want to delete this listing? This cannot be undone!')
+    console.log('deleting house listing', houseId);
+    if (confirmed == false) return
+    houseService.deleteHouse(houseId)
+  }
 
 
 
