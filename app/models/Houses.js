@@ -3,19 +3,19 @@ import { generateId } from "../utils/GenerateId.js";
 
 export class House {
 
-  // /**
-  //    * 
-  //    * @param {{
-  // * bedrooms: number,
-  // * year: number,
-  // * price: number,
-  // * imgUrl: string,
-  // * bathrooms: number,
-  // * sqft: number, 
-  // * description: string,
-  // * listingDate: *
-  // * }} data 
-  // */
+  /**
+     * 
+     * @param {{
+  * bedrooms: number,
+  * year: number,
+  * price: number,
+  * imgUrl: string,
+  * bathrooms: number,
+  * sqft: number, 
+  * description: string,
+  * listingDate: *
+  * }} data 
+  */
 
   constructor(data) {
     this.id = generateId()

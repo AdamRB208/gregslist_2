@@ -5,10 +5,10 @@ import { House } from "../models/Houses.js"
 
 class HouseService {
   createHouseListing(houseData) {
-    const house = new House()
+    const house = new House(houseData)
     console.log('new house', house)
     AppState.houses.unshift(house)
-    // this.saveHouse()
+    this.saveHouse()
   }
 
   saveHouse() {
@@ -18,17 +18,17 @@ class HouseService {
     localStorage.setItem('gregslist_houses', housesString)
   }
 
-  // loadHouses() {
-  //   const housesString = localStorage.getItem('gregslist_houses')
-  //   console.log('loaded houses', housesString);
-  //   const housesData = JSON.parse(housesString)
-  //   console.log('Houses Loaded', housesData);
-  //   if (housesData == null) return
-  //   const houses = housesData.map(housesData => new House(housesData))
-  //   console.log('Houses!', houses);
-  //   AppState.houses = houses
+  loadHouses() {
+    const housesString = localStorage.getItem('gregslist_houses')
+    console.log('loaded houses', housesString);
+    const housesData = JSON.parse(housesString)
+    console.log('Houses Loaded', housesData);
+    if (housesData == null) return
+    const houses = housesData.map(housesData => new House(housesData))
+    console.log('Houses!', houses);
+    AppState.houses = houses
 
-  // }
+  }
 
 
 }
